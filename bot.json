@@ -1,0 +1,8 @@
+{
+    "appconfig":
+    {
+        "headless": false,
+        "isGroupReply":false,
+        "webhook":"http://localhost/whatsapp-2/public/index.php"
+    }
+}
