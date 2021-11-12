@@ -2,7 +2,7 @@
 
 class Data
 {
-
+    // init db connection
     public $hostname = "localhost";
     public $username = "root";
     public $password = "";
@@ -12,7 +12,7 @@ class Data
     {
         $this->mysqli =  new mysqli($this->hostname, $this->username, $this->password, $this->db);
     }
-
+    // function to get data from database
     public function get_jadwal_sidang($nomor_perkara)
     {
         $query = "SELECT tanggal_sidang,agenda FROM perkara LEFT JOIN perkara_jadwal_sidang ON perkara.perkara_id=perkara_jadwal_sidang.perkara_id WHERE nomor_perkara LIKE '$nomor_perkara%'";
@@ -242,10 +242,6 @@ class Data
 
     public function get_penahanan()
     {
-        // $query = "SELECT nomor_perkara, sampai, jenis_penahanan_id FROM perkara LEFT JOIN perkara_putusan ON perkara.perkara_id=perkara_putusan.perkara_id LEFT JOIN penahanan_terdakwa ON perkara.perkara_id=penahanan_terdakwa.perkara_id WHERE jenis_penahanan_id=(SELECT max(jenis_penahanan_id) FROM penahanan_terdakwa LEFT JOIN perkara_putusan ON penahanan_terdakwa.perkara_id=perkara_putusan.perkara_id WHERE tanggal_putusan IS NULL) AND (YEAR(sampai)=YEAR(CURDATE()) AND sampai>=CURDATE()+10)";
-
-        // $query = "SELECT MAX(jenis_penahanan_id),nomor_perkara, tanggal_putusan, sampai FROM perkara LEFT JOIN perkara_putusan ON perkara.perkara_id=perkara_putusan.perkara_id LEFT JOIN penahanan_terdakwa ON perkara.perkara_id=penahanan_terdakwa.perkara_id WHERE (YEAR(sampai)=YEAR(CURDATE()) AND tanggal_putusan IS NULL AND sampai=CURDATE()-10 GROUP BY perkara_id";
-
         $query = "SELECT DISTINCT(penahanan_terdakwa.perkara_id) FROM penahanan_terdakwa LEFT JOIN perkara ON penahanan_terdakwa.perkara_id = perkara.perkara_id  WHERE YEAR(sampai)='2021' AND tahapan_terakhir_id = 14 ORDER BY perkara_id DESC ";
 
         $raw_data = $this->mysqli->query($query);
@@ -294,8 +290,3 @@ class Data
         return $text_last;
     }
 }
-
-// $coba = new Data;
-// $tanggal = $coba->get_jadwal_sidang('14/Pid.B/2021/PN Bli');
-
-// echo $tanggal;

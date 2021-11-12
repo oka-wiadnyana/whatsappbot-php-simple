@@ -1,9 +1,9 @@
 <?php
-
+// include file data.php
 include 'data.php';
 
 
-
+// cors 
 header("Content-Type: application/json");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type,Accept");
@@ -16,7 +16,7 @@ $message = explode('#', $rawmessage);
 $msg_typ = $x->type;
 
 $response = [['text' => '', 'type' => 'message']];
-
+// init message
 if ($message[0] == 'layanan') {
     $response = [['text' => 'Silahkan balas pesan ini dengan mengetikkan layanan yang anda inginkan' . PHP_EOL .
         '*- Pidana*' . PHP_EOL .
@@ -418,16 +418,6 @@ if ($message[0] == 'layanan') {
     $response = [['text' => $bas, 'type' => 'message']];
     $response = json_encode($response);
     echo ($response);
-    // } elseif ($message[0] == 'monev_relas') {
-
-
-    //     $data = new Data;
-    //     $relas = $data->get_relas();
-
-
-    //     $response = [['text' => $relas, 'type' => 'message']];
-    //     $response = json_encode($response);
-    //     echo ($response);
 } elseif ($message[0] == 'monev_tahanan') {
 
 
@@ -445,8 +435,6 @@ if ($message[0] == 'layanan') {
     $response = [['text' => 'Silahkan ketik : ' . PHP_EOL .
         '*- Monev_bas*' . PHP_EOL .
         '_Untuk mencari perkara yang belum diupload berita acara sidang_' . PHP_EOL .
-        // '*- Monev_relas*' . PHP_EOL .
-        // '_Untuk mencari perkara yang belum diupload relas panggilan_' . PHP_EOL .
         '*- Monev_tahanan*' . PHP_EOL .
         '_Untuk mencari perkara yang masa tahanan habis kurang dari 10 hari_', 'type' => 'message']];
     $response = json_encode($response);
