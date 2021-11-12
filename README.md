@@ -14,6 +14,7 @@ Langkah-langkah penggunaan :
  
  ### Kustomisasi Pesan dan Database
  Untuk mengkostumisasi pesan respon, silahkan ubah di file **index.php**. Dan untuk pesan yang membutuhkan koneksi ke Database silahkan ubah pada file **data.php**. 
+ **Penting : Sangat disarankan untuk menggunakan _clone_ Database SIPP**
 
    Feel free to contact me :
 
