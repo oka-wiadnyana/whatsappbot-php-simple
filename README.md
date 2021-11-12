@@ -9,7 +9,7 @@ Langkah-langkah penggunaan :
 1. Silahkan download terlebih dahulu [WBOT](https://github.com/vasani-arpit/WBOT) dan repo ini. 
 2. Pindahkan repo ini ke folder web server (XAMPP : htdocs, laragon : www).
 3. Copy file bot.json dan replace file bot.json yang ada pada WBOT.
-4. Atur konfigurasi database pada file index.php
+4. Atur konfigurasi database pada file index.php dan jalankan server
 5. Jalankan wbot.exe, dan scan qrcode yang muncul pada terminal dan Whatsapp bot siap digunakan
  
  ### Kustomisasi Pesan dan Database
