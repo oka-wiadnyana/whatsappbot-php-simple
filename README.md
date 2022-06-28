@@ -1,4 +1,4 @@
-# whatsappbot-php-simple
+# whatsappbot-php-simple (Unmaintained), move to whatsappbot-nodejs-simple
 Whatsapp bot ini dibuat dengan format pesan respon khusus untuk satker Pengadilan, namun tetap bisa dikustomisasi oleh pengguna lain sesuai kebutusan. Whatsapp bot ini dibuat dengan [wbot](https://github.com/vasani-arpit/WBOT) dari Om Vasani-Arpit, dan untuk webhooknya menggunakan bahasa _PHP_.
 
 Repo ini sudah tidak di maintain lagi, silahkan gunakan repo whatsappbot-nodejs-simple
